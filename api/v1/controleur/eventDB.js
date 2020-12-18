@@ -148,11 +148,11 @@ module.exports.getEventsByManagement = async(req, res) => {
  */
 module.exports.addEvent = async(req, res) => {
         const client = await pool.connect();
-    const {eventName, description, price, maxParticipantsCount
-        , startDate, endDate, isPrivate, streetAndNumber, password, category_fk, locationName_fk, locationPostalCode_fk} = req.body;
+    const {eventname, description, price, maxparticipantscount
+        , startdate, enddate, isprivate, streetandnumber, password, category_fk, locationname_fk, locationpostalcode_fk} = req.body;
     try{
-        await EventModele.addEvent(eventName, description, price, maxParticipantsCount, startDate
-            , endDate, isPrivate, streetAndNumber, (password != null ? await getHash(password) : password), category_fk, locationName_fk, locationPostalCode_fk, client);
+        await EventModele.addEvent(eventname, description, price, maxparticipantscount, startdate
+            , enddate, isprivate, streetandnumber, (password != null ? await getHash(password) : password), category_fk, locationname_fk, locationpostalcode_fk, client);
         res.sendStatus(201);
     } catch (e) {
         res.sendStatus(500)
@@ -207,11 +207,11 @@ module.exports.getEvent = async(req, res) => {
  */
 module.exports.updateEvent = async(req, res) => {
     const client = await pool.connect();
-    const {id, eventName, description, price, maxParticipantsCount
-        , startDate, endDate, isPrivate, streetAndNumber, password, category_fk, locationName_fk, locationPostalCode_fk} = req.body;
+    const {id, eventname, description, price, maxparticipantscount
+        , startdate, enddate, isprivate, streetandnumber, password, category_fk, locationname_fk, locationpostalcode_fk} = req.body;
     try{
-        const response = await EventModele.updateEvent(id, eventName, description, price, maxParticipantsCount, startDate
-            , endDate, isPrivate, streetAndNumber, (password != null ? await getHash(password) : password), category_fk, locationName_fk, locationPostalCode_fk, client);
+        const response = await EventModele.updateEvent(id, eventname, description, price, maxparticipantscount, startdate
+            , enddate, isprivate, streetandnumber, (password != null ? await getHash(password) : password), category_fk, locationname_fk, locationpostalcode_fk, client);
         if(response)
             res.sendStatus(204);
         else
