@@ -11,7 +11,7 @@ const {getHash} = require('../utils/utils');
  *          properties:
  *              id:
  *                  type: integer
- *              eventName:
+ *              eventname:
  *                  type: string
  *                  description: name of the event
  *              description:
@@ -19,10 +19,10 @@ const {getHash} = require('../utils/utils');
  *              price:
  *                  type: number
  *                  format: float
- *              startDate:
+ *              startdate:
  *                  type: string
  *                  format: date
- *              endDate:
+ *              enddate:
  *                  type: string
  *                  format: date
  *              category_fk:
@@ -38,7 +38,7 @@ const {getHash} = require('../utils/utils');
  *          properties:
  *              id:
  *                  type: integer
- *              eventName:
+ *              eventname:
  *                  type: string
  *                  description: name of the event
  *              description:
@@ -46,19 +46,19 @@ const {getHash} = require('../utils/utils');
  *              price:
  *                  type: number
  *                  format: float
- *              maxParticipantsCount:
+ *              maxparticipantscount:
  *                  type: integer
  *                  description: indicate the numbers of participants maximum, if exist
- *              startDate:
+ *              startdate:
  *                  type: string
  *                  format: date-time
- *              endDate:
+ *              enddate:
  *                  type: string
  *                  format: date-time
- *              isPrivate:
+ *              isprivate:
  *                  type: boolean
  *                  description: indicate if the event is private or not
- *              streetAndNumber:
+ *              streetandnumber:
  *                  type: string
  *              password:
  *                  type: string
@@ -66,9 +66,9 @@ const {getHash} = require('../utils/utils');
  *                  description: password required if private event
  *              category_fk:
  *                  type: string
- *              locationName_fk:
+ *              locationname_fk:
  *                  type: string
- *              locationPostalCode_fk:
+ *              locationpostalcode_fk:
  *                  type: string
  *
  */
