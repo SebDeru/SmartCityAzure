@@ -11,13 +11,10 @@ module.exports.getMemberByMail = async(mail, client) => {
 }
 
 module.exports.updateMember = async(id, pseudo, mail, password, client) => {
-    let query = "UPDATE member SET pseudo = $1, mail = $2";
-    if (password != null){
-        query += ", password = $4";
-    }
-    query += " WHERE id = $3";
-    return await client.query(query, [pseudo, mail, id, password]);
-    //return await client.query("UPDATE member SET pseudo = $1, mail = $2, password = $3 WHERE id = $4", [pseudo, mail, password, id]);
+    if (password === null)
+        return await client.query("UPDATE member SET pseudo = $1, mail = $2 WHERE id = $3", [pseudo, mail, id]);
+    else
+        return await client.query("UPDATE member SET pseudo = $1, mail = $2, password = $3 WHERE id = $4", [pseudo, mail, password, id]);
 }
 
 module.exports.deleteMembers = async(membersId, client) => {
