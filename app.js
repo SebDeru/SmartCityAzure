@@ -3,7 +3,8 @@ const express = require('express');
 const cors = require('cors');
 const versionRoutes = require('express-routes-versioning')();
 const app = express();
-const port = 3001;
+const process = require("process");
+const port = process.env.PORT
 
 app.use(express.json());
 app.use(cors());
