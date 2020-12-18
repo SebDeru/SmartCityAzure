@@ -15,7 +15,7 @@ app.use('/', versionRoutes({
 }, NoMatchFoundCallback));
 
 function NoMatchFoundCallback(req, res){
-    res.status(404).send('version not found');
+    res.status(404).send('API version not found');
 }
 
 function respondV1(req, res, next){
