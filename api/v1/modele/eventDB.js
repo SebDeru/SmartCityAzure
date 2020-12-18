@@ -28,7 +28,7 @@ module.exports.addEvent = async(eventName, description, price, maxParticipantsCo
 module.exports.updateEvent = async(id, eventName, description, price, maxParticipantsCount, startDate
     , endDate, isPrivate, streetAndNumber, password, category_fk, locationName_fk, locationPostalCode_fk, client) => {
     return await
-        client.query("UPDATE event SET eventname = $1, description = $2, price = $3, maxparticipantscount = $4, startdate = to_timestamp($5, 'YYYY-MM-DD HH24:MI'), enddate = to_timestamp($6, 'YYYY-MM-DD HH24:MI'), isprivate = $7, streetandnumber = $8, password = $9, category_fk = $10, locationname_fk = $11, locationpostalcode_fk = $12 WHERE id = $13",
+        client.query("UPDATE event SET eventName = $1, description = $2, price = $3, maxParticipantsCount = $4, startDate = to_timestamp($5, 'YYYY-MM-DD HH24:MI'), endDate = to_timestamp($6, 'YYYY-MM-DD HH24:MI'), isPrivate = $7, streetAndNumber = $8, password = $9, category_fk = $10, locationName_fk = $11, locationPostalCode_fk = $12 WHERE id = $13",
             [eventName, description, price,maxParticipantsCount, startDate, endDate, isPrivate, streetAndNumber, password, category_fk, locationName_fk, locationPostalCode_fk, id]);
 }
 
