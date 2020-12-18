@@ -1,0 +1,37 @@
+{
+  "name": "smartcity-restapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "initDB": "node scripts/JS/initDB.js",
+    "genDoc": "node ./swagger/swagger_jsdoc.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SebDeru/SmartCity-RestAPI.git"
+  },
+  "author": "Deru Sebastien and Mambourg Maxime",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SebDeru/SmartCity-RestAPI/issues"
+  },
+  "homepage": "https://github.com/SebDeru/SmartCity-RestAPI#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-promise-router": "^4.0.1",
+    "express-routes-versioning": "^1.0.1",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^8.5.1",
+    "process": "^0.11.10"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6",
+    "swagger-jsdoc": "^5.0.1"
+  }
+}
