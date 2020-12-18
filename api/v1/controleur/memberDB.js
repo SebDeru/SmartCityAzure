@@ -102,7 +102,7 @@ module.exports.updateMember = async (req, res) => {
     const client = await pool.connect();
     const {id, pseudo, mail, password} = req.body;
     try{
-        await MemberModel.updateMember(id, pseudo, mail, await getHash(password), client);
+        await MemberModel.updateMember(id, pseudo, mail, (password != null ? await getHash(password) : password), client);
         res.sendStatus(204);
     }catch (error){
         if(error.message.includes('"member_pseudo_key"')){
