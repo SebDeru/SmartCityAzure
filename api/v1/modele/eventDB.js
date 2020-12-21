@@ -5,7 +5,7 @@ module.exports.getEvents = async(client) => {
 
 module.exports.getEventsByParticipation = async(userMail, client) => {
     return await
-        client.query("SELECT id, eventName, description, price, to_char(startDate, 'DD-MM-YYYY') as startDate, to_char(endDate, 'DD-MM-YYYY') as endDate, category_fk, country_fk FROM event, location, participation WHERE ((event.locationname_fk IS NULL AND event.locationpostalcode_fk IS NULL) OR (event.locationName_fk = location.locationName AND event.locationPostalCode_fk = location.postalCode)) AND participation.eventId_fk = event.id AND participation.memberId_fk = (SELECT id FROM member WHERE mail = $1)", [userMail]);
+        client.query("SELECT id, eventName, description, price, to_char(startDate, 'DD-MM-YYYY') as startDate, to_char(endDate, 'DD-MM-YYYY') as endDate, category_fk, country_fk FROM event LEFT OUTER JOIN location on event.locationName_fk = location.locationName AND event.locationPostalCode_fk = location.postalCode JOIN participation ON participation.eventId_fk = event.id AND participation.memberId_fk = (SELECT id FROM member WHERE mail = $1)", [userMail]);
 }
 
 module.exports.getEventsByManagement = async(userMail, client) => {
