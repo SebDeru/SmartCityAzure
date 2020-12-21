@@ -19,5 +19,5 @@ module.exports.getUser = async(client, mail, password) => {
 };
 
 module.exports.addUser = async(username, mail, password, client) => {
-    await addMember(username, mail, await getHash(password), client);
+    await addMember(username, mail, password, client);
 }
