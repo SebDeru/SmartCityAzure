@@ -21,7 +21,7 @@ module.exports.getEvent = async(id, client) => {
 module.exports.addEvent = async(eventName, description, price, maxParticipantsCount, startDate
     , endDate, isPrivate, streetAndNumber, password, category_fk, locationName_fk, locationPostalCode_fk, client) =>{
     return await
-        client.query("INSERT INTO event (eventName, description, price, maxParticipantsCount, startDate, endDate, isPrivate, streetAndNumber, password, category_fk, locationName_fk, locationPostalCode_fk) VALUES ($1, $2, $3, $4, to_timestamp($5, 'YYYY-MM-DD HH24:MI'), to_timestamp($6, 'YYYY-MM-DD HH24:MI'), $7, $8, $9, $10, $11, $12) RETURNING id",
+        client.query("INSERT INTO event (eventName, description, price, maxParticipantsCount, startDate, endDate, isPrivate, streetAndNumber, password, category_fk, locationName_fk, locationPostalCode_fk) VALUES ($1, $2, $3, $4, to_timestamp($5, 'YYYY-MM-DD HH24:MI'), to_timestamp($6, 'YYYY-MM-DD HH24:MI'), $7, $8, $9, $10, $11, $12) RETURNING *",
             [eventName, description, price,maxParticipantsCount, startDate, endDate, isPrivate, streetAndNumber, password, category_fk, locationName_fk, locationPostalCode_fk]);
 }
 
