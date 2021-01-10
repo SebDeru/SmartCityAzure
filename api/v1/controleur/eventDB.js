@@ -153,7 +153,7 @@ module.exports.addEvent = async(req, res) => {
     try{
         const id = await EventModele.addEvent(eventname, description, price, maxparticipantscount, startdate
             , enddate, isprivate, streetandnumber, (password != null ? await getHash(password) : password), category_fk, locationname_fk, locationpostalcode_fk, client);
-        res.sendStatus(201).json(id);
+        res.json(id);
     } catch (e) {
         res.sendStatus(500)
     } finally {
